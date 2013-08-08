@@ -9,9 +9,16 @@ app.get('/', function(request, response) {
     
     response.send(str);
 });
+app.get('/phone.png', function(request, response) {
+  
+    var fs=require('fs');
+    var str =fs.readFileSync("phone.png");   
+    response.send(str);
+}
+);
 
 
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 8080;
 app.listen(port, function() {
   console.log("Listening on " + port);
 });
